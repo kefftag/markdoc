@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markdoc — Markdown to Word</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>markdoc</h1>
+      <p class="subtitle">Drop a Markdown file, get a Word document.</p>
+    </header>
+
+    <div id="drop-zone" role="button" tabindex="0" aria-label="Drop zone for Markdown files">
+      <div class="drop-inner">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a1 1 0 0 1 .707.293l4 4a1 1 0 0 1-1.414 1.414L13 5.414V16a1 1 0 0 1-2 0V5.414L8.707 7.707A1 1 0 1 1 7.293 6.293l4-4A1 1 0 0 1 12 2zM4 17a1 1 0 0 1 1 1v1h14v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/>
+        </svg>
+        <p class="drop-label">Drag &amp; drop your <code>.md</code> file here</p>
+        <p class="drop-or">or</p>
+        <label class="btn" for="file-input">Browse file</label>
+        <input id="file-input" type="file" accept=".md,.markdown,.txt" />
+      </div>
+    </div>
+
+    <div id="status" aria-live="polite"></div>
+
+    <div id="file-info" hidden>
+      <span id="file-name"></span>
+      <button id="convert-btn" class="btn btn-primary">Convert to .docx</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
